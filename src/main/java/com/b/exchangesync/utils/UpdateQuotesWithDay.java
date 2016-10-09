@@ -1,14 +1,12 @@
 package com.b.exchangesync.utils;
 
-import com.b.exchangesync.db.QuotesDao;
-import com.b.exchangesync.models.Quote;
-import com.b.exchangesync.repositories.QuoteRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.b.exchangesync.persistence.dao.QuotesDao;
+import com.b.exchangesync.persistence.models.Quote;
+import com.b.exchangesync.persistence.repositories.QuoteRepository;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 
 import java.util.ArrayList;
 import java.util.List;

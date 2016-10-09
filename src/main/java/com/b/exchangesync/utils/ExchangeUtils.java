@@ -2,7 +2,7 @@ package com.b.exchangesync.utils;
 
 
 
-import com.b.exchangesync.models.Quote;
+import com.b.exchangesync.persistence.models.Quote;
 import org.json.JSONArray;
 import org.json.JSONObject;
 

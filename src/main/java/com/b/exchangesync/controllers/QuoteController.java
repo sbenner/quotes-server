@@ -1,7 +1,7 @@
 package com.b.exchangesync.controllers;
 
-import com.b.exchangesync.models.Quote;
-import com.b.exchangesync.repositories.QuoteRepository;
+import com.b.exchangesync.persistence.models.Quote;
+import com.b.exchangesync.persistence.repositories.QuoteRepository;
 import com.b.exchangesync.utils.Period;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +25,7 @@ import java.util.List;
  * Date: 1/15/16
  * Time: 5:41 PM
  */
+
 @Controller
 public class QuoteController {
     private static final org.slf4j.Logger logger = LoggerFactory.getLogger(QuoteController.class);
@@ -50,11 +51,11 @@ public class QuoteController {
                 long ts = p.getSeconds();
                 ts=System.currentTimeMillis()/1000-ts;
 
-                return new ResponseEntity<List<Quote>>(quoteRepository.findQuoteBySymbolGtThanTs(symbol, ts, sort), HttpStatus.OK);
+                return new ResponseEntity<>(quoteRepository.findQuoteBySymbolGtThanTs(symbol, ts, sort), HttpStatus.OK);
             } else if (date != null) {
-                return new ResponseEntity<List<Quote>>(quoteRepository.findQuoteBySymbolAndDate(symbol, date, sort), HttpStatus.OK);
+                return new ResponseEntity<>(quoteRepository.findQuoteBySymbolAndDate(symbol, date, sort), HttpStatus.OK);
             } else {
-                return new ResponseEntity<List<Quote>>(HttpStatus.BAD_REQUEST);
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
             }
         } catch (NumberFormatException e) {
             logger.error(e.getMessage(), e);

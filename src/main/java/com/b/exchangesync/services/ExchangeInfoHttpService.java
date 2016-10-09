@@ -1,7 +1,7 @@
 package com.b.exchangesync.services;
 
-import com.b.exchangesync.models.Quote;
-import com.b.exchangesync.repositories.QuoteRepository;
+import com.b.exchangesync.persistence.models.Quote;
+import com.b.exchangesync.persistence.repositories.QuoteRepository;
 import com.b.exchangesync.utils.ExchangeUtils;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;

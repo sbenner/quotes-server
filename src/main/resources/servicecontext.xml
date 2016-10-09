@@ -11,7 +11,7 @@
     <context:annotation-config />
     <context:component-scan base-package="com.b.exchangesync" />
 
-    <mongo:repositories base-package="com.b.exchangesync.repositories" mongo-template-ref="mongoTempate"/>
+    <mongo:repositories base-package="com.b.exchangesync.persistence.repositories" mongo-template-ref="mongoTempate"/>
 
     <bean id="propertyPlaceholderConfigurer"
           class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">

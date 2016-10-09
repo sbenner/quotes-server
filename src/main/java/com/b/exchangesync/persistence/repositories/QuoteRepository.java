@@ -1,7 +1,7 @@
-package com.b.exchangesync.repositories;
+package com.b.exchangesync.persistence.repositories;
 
 
-import com.b.exchangesync.models.Quote;
+import com.b.exchangesync.persistence.models.Quote;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;

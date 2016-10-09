@@ -1,4 +1,4 @@
-package com.b.exchangesync.models;
+package com.b.exchangesync.persistence.models;
 
 import com.b.exchangesync.utils.DateUtils;
 

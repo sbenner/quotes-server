@@ -2,7 +2,7 @@ package com.b.exchangesync.services;
 
 import com.b.exchangesync.persistence.models.Quote;
 import com.b.exchangesync.persistence.repositories.QuoteRepository;
-import com.b.exchangesync.utils.ExchangeUtils;
+import com.b.exchangesync.utils.QuoteUtils;
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.slf4j.LoggerFactory;
@@ -23,8 +23,8 @@ import java.util.TimerTask;
  */
 
 @Service
-public class ExchangeInfoHttpService extends TimerTask {
-    private static final org.slf4j.Logger logger = LoggerFactory.getLogger(ExchangeInfoHttpService.class);
+public class ExchangeInfoHttpProcessor extends TimerTask {
+    private static final org.slf4j.Logger logger = LoggerFactory.getLogger(ExchangeInfoHttpProcessor.class);
     @Autowired
     RestTemplate restTemplate;
     @Autowired
@@ -52,7 +52,7 @@ public class ExchangeInfoHttpService extends TimerTask {
     public void run() {
         String res = getExchangeData();
         if (res != null) {
-            List<Quote> quotesList = ExchangeUtils.buildQuotesFromString(res, 0);
+            List<Quote> quotesList = QuoteUtils.buildQuotesFromString(res, 0);
             quoteRepository.save(quotesList);
         }
 

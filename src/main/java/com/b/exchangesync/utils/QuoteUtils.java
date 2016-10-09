@@ -15,7 +15,7 @@ import java.util.List;
  * Date: 1/15/16
  * Time: 4:13 AM
  */
-public class ExchangeUtils {
+public class QuoteUtils {
 
     public static List<Quote> buildQuotesFromString(String contents, long timestamp) {
         List<Quote> quotes = new ArrayList<Quote>();

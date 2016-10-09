@@ -43,7 +43,7 @@ public class UpdateQuotesWithDay {
         newQuotes.addAll(quotes);
         for(Quote q: newQuotes)
         {
-            quotesDao.updateAuctionsUrl(q);
+            quotesDao.updateQuote(q);
         }
 
         return newQuotes;

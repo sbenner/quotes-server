@@ -8,7 +8,7 @@
     <bean id="exchangeInfoTimerTask" class="org.springframework.scheduling.concurrent.ScheduledExecutorTask">
         <property name="fixedRate" value="true" />
         <property name="period" value="2" />
-        <property name="runnable" ref="exchangeInfoHttpService" />
+        <property name="runnable" ref="exchangeInfoHttpProcessor" />
         <property name="timeUnit" value="MINUTES"/>
     </bean>
 
